@@ -18,8 +18,3 @@ const localDb = process.env.TESTENV ? database.test : database.development
 const currentDb = process.env.DB_URI || localDb
 
 module.exports = currentDb
-
-//DATABASE_URL=mongodb+srv://sei:xLzs10nOwjnjApL0@sei.k1mdm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
-// change the database name below
-// DATABASE_URL=mongodb+srv://sei:xLzs10nOwjnjApL0@sei.k1mdm.mongodb.net/surfRescue?retryWrites=true&w=majority

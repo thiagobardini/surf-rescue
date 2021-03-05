@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API="http://localhost:4741"
+API="https://limitless-plateau-08641.herokuapp.com/"
 URL_PATH="/sign-up"
 
 curl "${API}${URL_PATH}" \
