@@ -99,7 +99,7 @@ The idea of this project is to create a recommendation page for surfers who want
 </tr>
 </table>
 
-### Account
+### Accounts
 <table>
 <tr>
   <th colspan="4">Request</th>
@@ -115,30 +115,30 @@ The idea of this project is to create a recommendation page for surfers who want
 </tr>
 <tr>
 <td>POST</td>
-<td> /account</td>
+<td> /accounts</td>
 <td>{}</td>
 <td>token</td>
 <td>201, Created</td>
-<td>campaign Obj</td>
+<td>account Obj</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/account</td>
+<td>/accounts</td>
+<td>n/a</td>
+<td>token</td>
+<td>200, OK</td>
+<td>accounts Obj</td>
+</tr>
+<td>GET</td>
+<td>/accounts/:id</td>
 <td>n/a</td>
 <td>token</td>
 <td>200, OK</td>
 <td>account Obj</td>
 </tr>
-<td>GET</td>
-<td>/account/:id</td>
-<td>n/a</td>
-<td>token</td>
-<td>200, OK</td>
-<td>campaign Obj</td>
-</tr>
 <tr>
 <td>DELETE</td>
-<td>/account/:id</td>
+<td>/accounts/:id</td>
 <td> n/a </td>
 <td>token</td>
 <td>200, Ok</td>
@@ -147,11 +147,11 @@ The idea of this project is to create a recommendation page for surfers who want
 </tr>
 <tr>
 <td>PATCH</td>
-<td>/account/:id</td>
-<td>campaign data</td>
+<td>/accounts/:id</td>
+<td>account data</td>
 <td>token</td>
 <td>200, Ok</td>
-<td>campaign Obj</td>
+<td>account Obj</td>
 </tr>
 <tr>
   <th colspan="6">Response Errors</th>
@@ -189,30 +189,30 @@ The idea of this project is to create a recommendation page for surfers who want
 </tr>
 <tr>
 <td>POST</td>
-<td> /places</td>
+<td> /accounts/:id/places</td>
 <td>{}</td>
 <td>token</td>
 <td>201, Created</td>
-<td>campaign Obj</td>
+<td>place Obj</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/places</td>
+<td>/accounts/:id/places</td>
 <td>n/a</td>
 <td>token</td>
 <td>200, OK</td>
 <td>places Obj</td>
 </tr>
 <td>GET</td>
-<td>/places/:id</td>
+<td>/accounts/:id/places/:id</td>
 <td>n/a</td>
 <td>token</td>
 <td>200, OK</td>
-<td>campaign Obj</td>
+<td>place Obj</td>
 </tr>
 <tr>
 <td>DELETE</td>
-<td>/places/:id</td>
+<td>/accounts/:id/places/:id</td>
 <td> n/a </td>
 <td>token</td>
 <td>200, Ok</td>
@@ -221,11 +221,11 @@ The idea of this project is to create a recommendation page for surfers who want
 </tr>
 <tr>
 <td>PATCH</td>
-<td>/places/:id</td>
-<td>campaign data</td>
+<td>/accounts/:id/places/:id</td>
+<td>place data</td>
 <td>token</td>
 <td>200, Ok</td>
-<td>campaign Obj</td>
+<td>place Obj</td>
 </tr>
 <tr>
   <th colspan="6">Response Errors</th>

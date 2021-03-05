@@ -15,3 +15,5 @@ curl "${API}${URL_PATH}" \
   }'
 
 echo
+
+# EMAIL="tv@tv" PASSWORD="tv" sh curl-scripts/auth/sign-in.sh
