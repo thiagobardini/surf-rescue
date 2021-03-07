@@ -10,4 +10,4 @@ curl "${API}${URL_PATH}" \
 
 echo
 
-# TOKEN=050315f7ca93876cd77c174ea1b8f66a sh curl-scripts/accounts/index.sh
+# TOKEN=29420481cfa63cb7a60fa98be102e49f sh curl-scripts/accounts/index.sh

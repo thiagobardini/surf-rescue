@@ -1,8 +1,11 @@
 const mongoose = require('mongoose')
-const placeSchema = require('./place')
 
 const accountSchema = new mongoose.Schema({
   name: {
+    type: String,
+    required: true
+  },
+  hometown: {
     type: String,
     required: true
   },
@@ -10,15 +13,21 @@ const accountSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-    budget: {
+  avgBudgetDay: {
     type: Number, 
     required: true
-  },  
-  places: [placeSchema],
+  }, 
+  waveRange: {
+    type: Number, 
+    required: true
+  }, 
+  stance: {
+    type: String, 
+    required: true
+  }, 
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: 'User'
   }
 }, {
   timestamps: true
