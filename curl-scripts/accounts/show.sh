@@ -9,3 +9,5 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Bearer ${TOKEN}"
 
 echo
+
+# TOKEN=04cd1fdc7946f6d66aa9d9f89134de17 sh curl-scripts/accounts/index.sh

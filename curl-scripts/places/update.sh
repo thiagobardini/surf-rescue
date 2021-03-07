@@ -13,9 +13,12 @@ curl "${API}${URL_PATH}/${ID}" \
       "localName": "'"${LOCAL_NAME}"'",
       "country": "'"${COUNTRY}"'",
       "localImg": "'"${LOCAL_IMG}"'",
+      "description": "'"${DESCRIPTION}"'",
       "surfLevel": "'"${SURF_LEVEL}"'",
-      "avgCostDay": "'"${AVG_COST_D}"'",
-      "review": "'"${REVIEW}"'"
+      "avgCostDay": "'"${AVG_BUDGET_DAY}"'",
+      "waveRange": "'"${WAVE_RANGE}"'",
+      "stance": "'"${STANCE}"'",
+      "owner": "'"${OWNER}"'"
     }
   }'
 

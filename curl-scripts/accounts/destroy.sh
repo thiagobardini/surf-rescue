@@ -9,3 +9,5 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Bearer ${TOKEN}"
 
 echo
+
+# TOKEN=ce743ff1696e9b2c80888c246f7a4cf7 sh curl-scripts/accounts/destroy.sh
