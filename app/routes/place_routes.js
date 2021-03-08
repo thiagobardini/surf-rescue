@@ -43,8 +43,8 @@ router.post('/places', requireToken,(req, res, next) => {
 
 // UPDATE
 router.patch('/places/:id', requireToken,(req, res, next) => {
-  const id = req.params.id
-  const placeData = req.body.place
+  // const id = req.params.id
+  const placeData = req.body.place.id
   // const user = await User.findByIdAndUpdate(req.user.id, req.user,{ new: true });
   Place.findById(id)
     .then(handle404)

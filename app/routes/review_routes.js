@@ -45,41 +45,25 @@ router.get("places/:id/reviews/:id", requireToken, (req, res, next) => {
 router.post("/places/:id/reviews", requireToken, (req, res, next) => {
   console.log("The user Object: ", req.user);
   console.log("The incoming event data: ", req.body);
-  // set owner of new review to be current user
-  // req.body.review.owner = req.user.id;
-
   Review.create(req.body.review)
-    // respond to succesful `create` with status 201 and JSON of new "review"
     .then((review) => {
       console.log("created review -> res -> db -> review routes ", review);
       res.status(201).json({ review: review });
     })
-    // if an error occurs, pass it off to our error handler
-    // the error handler needs the error message and the `res` object so that it
-    // can send an error message back to the client
     .catch(next);
 });
 
 // UPDATE
 router.patch("places/:id/reviews/:id", requireToken, removeBlanks, (req, res, next) => {
-  // if the client attempts to change the `owner` property by including a new
-  // owner, prevent that by deleting that key/value pair
   delete req.body.review.owner;
-
   Review.findById(req.params.id)
     .then(handle404)
     .then((review) => {
       console.log("Update -> account_routes ", review);
-      // pass the `req` object and the Mongoose record to `requireOwnership`
-      // it will throw an error if the current user isn't the owner
       requireOwnership(req, review);
-
-      // pass the result of Mongoose's `.update` to the next `.then`
       return review.updateOne(req.body.review);
     })
-    // if that succeeded, return 204 and no JSON
     .then(() => res.sendStatus(204))
-    // if an error occurs, pass it to the handler
     .catch(next);
 });
 
