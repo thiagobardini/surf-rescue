@@ -12,6 +12,7 @@ const removeBlanks = require('../../lib/remove_blank_fields')
 const requireToken = passport.authenticate('bearer', { session: false })
 
 const router = express.Router()
+// const mocks = require('../mocks/places')
 
 // INDEX
 // GET /places
@@ -36,6 +37,7 @@ router.get('/places/:id', requireToken,(req, res, next) => {
 // POST
 router.post('/places', requireToken,(req, res, next) => {
   const placesData = req.body.place
+  // const placeData = mocks[0].place
   Place.create(placesData)
     .then(place => res.status(201).json({place: place}))
     .catch(next)
