@@ -16,14 +16,19 @@ const reviewSchema = new mongoose.Schema(
       required: true,
     },
     place: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Place',
-    required: true
-  }
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Place",
+      required: true,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model('Review', reviewSchema)
+module.exports = mongoose.model("Review", reviewSchema);

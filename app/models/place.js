@@ -40,12 +40,12 @@ const placeSchema = new mongoose.Schema(
       ref: "Review",
       required: false
     }],
-    owner: 
-      {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true
-    },
+    // owner: 
+    //   {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    //   required: true
+    // },
   },
     
   {
