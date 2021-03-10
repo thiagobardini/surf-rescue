@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "6046d8f5b0c42f4408080790"
+  },
+  "reviews": [],
+  "localName": "Selina Surf Club Puerto Viejo",
+  "country": "Costa Rica",
+  "localImg": "public/surf.jpeg",
+  "description": "Puerto Viejo is a place full of easy charm and you can see why it is one of the best surf camps in Central America. Here, jungle meets the ocean in perfect harmony. ",
+  "surfLevel": "BEGINNER",
+  "avgCostDay": 100,
+  "waveRange": 5,
+  "stance": "Goofy",
+  "owner": {
+    "$oid": "60439b20c429b0a706f168ed"
+  },
+  "createdAt": {
+    "$date": "2021-03-09T02:09:58.712Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-09T02:09:58.712Z"
+  },
+  "__v": 0,
+
+  "_id": {
+    "$oid": "6046d8f5b0c42f4408080790"
+  },
+  "reviews": [],
+  "localName": "Tubarao",
+  "country": "BR",
+  "localImg": "public/surf.jpeg",
+  "description": "Nice place.",
+  "surfLevel": "BEGINNER",
+  "avgCostDay": 1000,
+  "waveRange": 5,
+  "stance": "Goofy",
+  "owner": {
+    "$oid": "60439b20c429b0a706f168ed"
+  },
+  "createdAt": {
+    "$date": "2021-03-09T02:09:58.712Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-09T02:09:58.712Z"
+  },
+  "__v": 0
+}]
