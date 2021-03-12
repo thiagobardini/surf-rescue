@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-const Review = require("../models/review");
+const Place = require("../models/place");
 const customErrors = require("../../lib/custom_errors");
 const handle404 = customErrors.handle404;
 const requireOwnership = customErrors.requireOwnership;
@@ -45,11 +45,18 @@ router.get("places/:id/reviews/:id", requireToken, (req, res, next) => {
 router.post("/places/:id/reviews", requireToken, (req, res, next) => {
   console.log("The user Object: ", req.user);
   console.log("The incoming event data: ", req.body);
-  Review.create(req.body.review)
-    .then((review) => {
-      console.log("created review -> res -> db -> review routes ", review);
-      res.status(201).json({ review: review });
+  Place.findById(req.params.id)
+    .then((place) => {
+      console.log(place);
+      req.body.review.owner = req.user.id
+      place.reviews.push(req.body.review)
+      console.log(place)
+      return place.save()
+      // res.status(201).json({ review: review });
     })
+    .then(saveplace => {
+      res.status(201).json({ saveplace: saveplace });
+    } )
     .catch(next);
 });
 

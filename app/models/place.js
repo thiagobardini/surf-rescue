@@ -35,19 +35,14 @@ const placeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    reviews: [{
+    owner: 
+      {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Review",
-      required: false
-    }],
-    // owner: 
-    //   {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "User",
-    //   required: true
-    // },
+      ref: "User",
+      required: true
+    },
+     reviews: [reviewSchema],   
   },
-    
   {
     timestamps: true,
   }
