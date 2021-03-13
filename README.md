@@ -1,4 +1,5 @@
 # Surf Rescue API - Version 1
+![logo](https://i.imgur.com/s7xFfWt.jpg)
 This application allows the users to create, edit, delete and view places to surf. 
 This API stores the information about a user and its respective places. It allows users to create, update, view and delete ideas of places to surf.
 
