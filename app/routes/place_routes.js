@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 
-const Account = require('../models/account')
+// const Account = require('../models/account')
 const Place = require('../models/place')
 
 const customErrors = require('../../lib/custom_errors')
@@ -12,16 +12,6 @@ const removeBlanks = require('../../lib/remove_blank_fields')
 const requireToken = passport.authenticate('bearer', { session: false })
 
 const router = express.Router()
-// const mocks = require('../mocks/places')
-
-// INDEX
-// GET /places
-router.get('/places', requireToken,(req, res, next) => {
-  Place.find()
-    .populate('owner')
-    .then(places => res.json({ places: places }))
-    .catch(next)
-})
 
 // SHOW
 // GET /places/:id
@@ -31,6 +21,15 @@ router.get('/places/:id', requireToken,(req, res, next) => {
     .populate('owner')
     .then(handle404)
     .then(place => res.json({ place: place}))
+    .catch(next)
+})
+
+// INDEX
+// GET /places
+router.get('/places', requireToken,(req, res, next) => {
+  Place.find()
+    .populate('owner')
+    .then(places => res.json({ places: places }))
     .catch(next)
 })
 
