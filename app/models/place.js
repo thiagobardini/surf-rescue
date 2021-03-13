@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const reviewSchema = require('./review')
+// const reviewSchema = require('./review')
 
 const placeSchema = new mongoose.Schema(
   {
@@ -41,7 +41,7 @@ const placeSchema = new mongoose.Schema(
       ref: "User",
       required: true
     },
-     reviews: [reviewSchema],   
+    //  reviews: [reviewSchema],   
   },
   {
     timestamps: true,

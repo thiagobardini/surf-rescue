@@ -36,9 +36,10 @@ router.get('/places/:id', requireToken,(req, res, next) => {
 
 // POST
 router.post('/places', requireToken,(req, res, next) => {
-  const placesData = req.body.place
+  let placesData = req.body.place
+   placesData.place.owner = req.user.id
   // const placeData = mocks[0].place
-  Place.create(placesData)
+  Place.create(placesData.place)
     .then(place => res.status(201).json({place: place}))
     .catch(next)
 })
@@ -48,6 +49,7 @@ router.patch('/places/:id', requireToken,(req, res, next) => {
   // const id = req.params.id
   const placeData = req.body.place.id
   // const user = await User.findByIdAndUpdate(req.user.id, req.user,{ new: true });
+
   Place.findById(id)
     .then(handle404)
     .then(place => Place.updateOne(placeData))
