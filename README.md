@@ -21,7 +21,7 @@ User can create/update/delete/view their ACCOUNT, which will include: Name, surf
 #### Version 3
 Next version users can create/update/delete/view REVIEWS places for each other. 
 #### Version 4
-Logic for suggesting Place based on a user's Account. The page will do recommendations matching Places skill to Account skill. 
+Logic for suggesting Place bad on a user's Account. The page will do recommendations matching Places skill to Account skill. 
 
 
 ## API End Points
@@ -59,7 +59,7 @@ All data returned from API actions is formatted as JSON.
 This application uses authentication and allows users to create surf places inside the website. During the process of development, several tools were used to bring this API to live. Ajax, Mongoose, Express, Passport, and more. The application contains a robust back-end with validations for the user accounts. 
 
 #### Problem Solving:
-The goal for the application is be a tool for find the best surf place fits own their travellers budget and surf skills.
+The app's purpose is to be a tool to find the best surf spot that fits the traveler's budget and surfing skills.
 
 
 
