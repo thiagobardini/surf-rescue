@@ -13,27 +13,27 @@ const placeSchema = new mongoose.Schema(
     },
    localImg: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
       type: String,
-      required: true,
+      required: false,
     },
     surfLevel: {
       type: String,
-      required: true,
+      required: false,
     },
     avgCostDay: {
       type: Number,
-      required: true,
+      required: false,
     },
     waveRange: {
       type: Number,
-      required: true,
+      required: false,
     },
     stance: {
       type: String,
-      required: true,
+      required: false,
     },
     owner: 
       {

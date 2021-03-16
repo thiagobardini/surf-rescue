@@ -23,6 +23,19 @@ router.get('/places/:id', requireToken,(req, res, next) => {
     .then(place => res.json({ place: place}))
     .catch(next)
 })
+  
+
+// router.get('/places', requireToken, (req, res, next) => {
+//   console.log(req)
+//   console.log(req.user._id)
+//   const id = req.user._id
+//   Place.find({ owner: id })
+//     .then(places => {
+//       return places.map(place => place.toObject())
+//     })
+//     .then(places => res.status(200).json({ places }))
+//     .catch(next)
+// })
 
 // INDEX
 // GET /places
