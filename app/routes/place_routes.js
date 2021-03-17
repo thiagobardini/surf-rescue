@@ -58,13 +58,13 @@ router.post('/places', requireToken,(req, res, next) => {
 
 // UPDATE
 router.patch('/places/:id', requireToken,(req, res, next) => {
-  // const id = req.params.id
-  const placeData = req.body.place.id
+  const id = req.params.id
+  const placeData = req.body.place
   // const user = await User.findByIdAndUpdate(req.user.id, req.user,{ new: true });
 
   Place.findById(id)
     .then(handle404)
-    .then(place => Place.updateOne(placeData))
+    .then(() => Place.updateOne(placeData))
     .then(() => res.sendStatus(204))
     .catch(next)
 })
@@ -74,7 +74,7 @@ router.delete('/places/:id', requireToken,(req, res, next) => {
   const id = req.params.id
   Place.findById(id)
     .then(handle404)
-    .then(place => place.deleteOne())
+    .then((place) => Place.deleteOne(place))
     .then(() => res.sendStatus(204))
     .catch(next)
 })

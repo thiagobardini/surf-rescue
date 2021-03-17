@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const reviewSchema = require('./review')
 
 const placeSchema = new mongoose.Schema(
   {
@@ -41,7 +40,6 @@ const placeSchema = new mongoose.Schema(
       ref: "User",
       required: true
     },
-    //  reviews: [reviewSchema],   
   },
   {
     timestamps: true,
@@ -49,5 +47,3 @@ const placeSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model('Place', placeSchema)
-
-// LOCAL_NAME="TV" COUNTRY="Canada" LOCAL_IMG="<IMG>"  DESCRIPTION="TESTANDO" TOKEN=bc020a47d93ce61a90c7cbefe85b77ce sh curl-scripts/places/create.sh
