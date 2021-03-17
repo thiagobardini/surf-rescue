@@ -23,11 +23,11 @@ const placeSchema = new mongoose.Schema(
       required: false,
     },
     avgCostDay: {
-      type: Number,
+      type: String,
       required: false,
     },
     waveRange: {
-      type: Number,
+      type: String,
       required: false,
     },
     stance: {
