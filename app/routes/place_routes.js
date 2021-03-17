@@ -1,9 +1,6 @@
 const express = require('express')
 const passport = require('passport')
-
-// const Account = require('../models/account')
 const Place = require('../models/place')
-
 const customErrors = require('../../lib/custom_errors')
 const handle404 = customErrors.handle404
 const requireOwnership = customErrors.requireOwnership
@@ -23,19 +20,6 @@ router.get('/places/:id', requireToken,(req, res, next) => {
     .then(place => res.json({ place: place}))
     .catch(next)
 })
-  
-
-// router.get('/places', requireToken, (req, res, next) => {
-//   console.log(req)
-//   console.log(req.user._id)
-//   const id = req.user._id
-//   Place.find({ owner: id })
-//     .then(places => {
-//       return places.map(place => place.toObject())
-//     })
-//     .then(places => res.status(200).json({ places }))
-//     .catch(next)
-// })
 
 // INDEX
 // GET /places
@@ -49,8 +33,7 @@ router.get('/places', requireToken,(req, res, next) => {
 // POST
 router.post('/places', requireToken,(req, res, next) => {
   let placesData = req.body.place
-   placesData.place.owner = req.user.id
-  // const placeData = mocks[0].place
+  placesData.place.owner = req.user.id
   Place.create(placesData.place)
     .then(place => res.status(201).json({place: place}))
     .catch(next)
@@ -60,8 +43,6 @@ router.post('/places', requireToken,(req, res, next) => {
 router.patch('/places/:id', requireToken,(req, res, next) => {
   const id = req.params.id
   const placeData = req.body.place
-  // const user = await User.findByIdAndUpdate(req.user.id, req.user,{ new: true });
-
   Place.findById(id)
     .then(handle404)
     .then(() => Place.updateOne(placeData))
