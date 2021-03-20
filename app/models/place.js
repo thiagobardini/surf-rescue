@@ -10,10 +10,6 @@ const placeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-   localImg: {
-      type: String,
-      required: false,
-    },
     description: {
       type: String,
       required: false,
@@ -27,10 +23,6 @@ const placeSchema = new mongoose.Schema(
       required: false,
     },
     waveRange: {
-      type: String,
-      required: false,
-    },
-    stance: {
       type: String,
       required: false,
     },

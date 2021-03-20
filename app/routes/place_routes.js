@@ -55,7 +55,7 @@ router.delete('/places/:id', requireToken,(req, res, next) => {
   const id = req.params.id
   Place.findById(id)
     .then(handle404)
-    .then((place) => Place.deleteOne(place))
+    .then((place) => place.deleteOne())
     .then(() => res.sendStatus(204))
     .catch(next)
 })
