@@ -1,41 +1,41 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema(
   {
     localName: {
       type: String,
-      required: true,
+      required: true
     },
     country: {
       type: String,
-      required: true,
+      required: true
     },
     description: {
       type: String,
-      required: false,
+      required: false
     },
     surfLevel: {
       type: String,
-      required: false,
+      required: false
     },
     avgCostDay: {
       type: String,
-      required: false,
+      required: false
     },
     waveRange: {
       type: String,
-      required: false,
+      required: false
     },
-    owner: 
+    owner:
       {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true
-    },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
-);
+)
 
 module.exports = mongoose.model('Place', placeSchema)

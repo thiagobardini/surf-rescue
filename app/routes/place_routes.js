@@ -12,7 +12,7 @@ const router = express.Router()
 
 // SHOW
 // GET /places/:id
-router.get('/places/:id', requireToken,(req, res, next) => {
+router.get('/places/:id', requireToken, (req, res, next) => {
   const id = req.params.id
   Place.findById(id)
     .populate('owner')
@@ -23,7 +23,7 @@ router.get('/places/:id', requireToken,(req, res, next) => {
 
 // INDEX
 // GET /places
-router.get('/places', requireToken,(req, res, next) => {
+router.get('/places', requireToken, (req, res, next) => {
   Place.find()
     .populate('owner')
     .then(places => res.json({ places: places }))
@@ -31,7 +31,7 @@ router.get('/places', requireToken,(req, res, next) => {
 })
 
 // POST
-router.post('/places', requireToken,(req, res, next) => {
+router.post('/places', requireToken, (req, res, next) => {
   let placesData = req.body.place
   placesData.place.owner = req.user.id
   Place.create(placesData.place)
@@ -40,21 +40,23 @@ router.post('/places', requireToken,(req, res, next) => {
 })
 
 // UPDATE
-router.patch('/places/:id', requireToken,(req, res, next) => {
+router.patch('/places/:id', requireToken, (req, res, next) => {
   const id = req.params.id
   const placeData = req.body.place
   Place.findById(id)
     .then(handle404)
+    .then(event => requireOwnership(req, event))
     .then(() => Place.updateOne(placeData))
     .then(() => res.sendStatus(204))
     .catch(next)
 })
 
 // DESTROY
-router.delete('/places/:id', requireToken,(req, res, next) => {
+router.delete('/places/:id', requireToken, (req, res, next) => {
   const id = req.params.id
   Place.findById(id)
     .then(handle404)
+    .then(event => requireOwnership(req, event))
     .then((place) => place.deleteOne())
     .then(() => res.sendStatus(204))
     .catch(next)
